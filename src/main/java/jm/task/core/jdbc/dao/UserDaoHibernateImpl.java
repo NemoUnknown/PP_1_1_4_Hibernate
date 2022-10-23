@@ -95,9 +95,6 @@ public class UserDaoHibernateImpl implements UserDao {
             transaction.commit();
         } catch (HibernateException e) {
             e.printStackTrace();
-            if (transaction != null) {
-                transaction.rollback();
-            }
         }
         return allUsers;
     }
